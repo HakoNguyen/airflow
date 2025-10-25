@@ -19,17 +19,16 @@ for d in [DATA_RAW_DIR, DATA_PROCESSED_DIR, CLEANED_DIR, DASHBOARD_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
 
-
 # Định nghĩa hàm xử lý 1 file
 
 def process_file(raw_file: Path):
-    """Xử lý một file JSON từ raw → cleaned + dashboard"""
+    
 
     if not raw_file.exists():
-        print(f" Không tìm thấy file: {raw_file}")
+        print(f" Cant find file: {raw_file}")
         return
 
-    print(f" Đang xử lý file: {raw_file.name}")
+    print(f" Processing file: {raw_file.name}")
 
     with open(raw_file, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -80,7 +79,7 @@ def process_file(raw_file: Path):
     with open(agg_file, "w", encoding="utf-8") as f:
         json.dump(df_agg.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
 
-    print(f"✅ Xử lý xong file {raw_file.name}")
+    print(f"Processed successfully {raw_file.name}")
 
 
 
@@ -88,13 +87,13 @@ def process_file(raw_file: Path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", help="Ngày xử lý (YYYY-MM-DD)")
-    parser.add_argument("--all", action="store_true", help="Xử lý tất cả file trong data/raw")
+    parser.add_argument("--date", help="processed date (YYYY-MM-DD)")
+    parser.add_argument("--all", action="store_true", help="Process all file in data/raw")
     args = parser.parse_args()
 
     if args.all:
         files = sorted(DATA_RAW_DIR.glob("marinedata_*.json"))
-        print(f" Đang xử lý {len(files)} file trong thư mục raw/")
+        print(f" Processing {len(files)} file in raw/")
         for file in files:
             process_file(file)
     else:

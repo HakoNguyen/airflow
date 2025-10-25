@@ -1,7 +1,7 @@
 from ingest_module import run_ingest
 from datetime import datetime
 
-date_input = input("Nhập ngày cần lấy dữ liệu (YYYY-MM-DD, để trống = hôm nay): ").strip()
+date_input = None
 
 if date_input:
     try:

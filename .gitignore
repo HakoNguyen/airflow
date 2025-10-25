@@ -7,6 +7,20 @@ __pycache__/
 *.pyo
 *.pyd
 
+# Data files - không push data lên git
+data/
+dags/src/marineV/data/
+*.json
+*.csv
+*.parquet
+*.xlsx
+*.xls
+
+# Cache files
+*.cache
+.cache.sqlite
+*.sqlite
+*.db
 
 # OS files
 .DS_Store
@@ -17,8 +31,18 @@ Thumbs.db
 .idea/
 *.code-workspace
 
+# Environment files
 .env
 *.env
 
+# Jupyter notebooks
 *.ipynb
+
+# Docker volumes
+postgres-db-volume/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
 

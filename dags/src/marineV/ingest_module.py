@@ -109,7 +109,7 @@ def save_to_json(df, chosen_date):
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(old_data, f, ensure_ascii=False, indent=2)
-    print(f"Đã lưu {len(new_data)} bản ghi vào {filename}")
+    print(f"Loaded {len(new_data)} to {filename}")
 
 
 def run_ingest(chosen_date):
@@ -134,4 +134,4 @@ def run_ingest(chosen_date):
     df_merged.fillna("N/A", inplace=True)
 
     save_to_json(df_merged, chosen_date)
-    print(f" Tổng số bản ghi thu thập: {len(df_merged)}")
+    print(f" Total records: {len(df_merged)}")
