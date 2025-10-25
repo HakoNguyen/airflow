@@ -60,4 +60,4 @@ if __name__ == "__main__":
         date_str = sys.argv[1]
         upload_cleaned_data(mode='single', date_str=date_str)
     else:
-        upload_cleaned_data(mode="single", date_str=date.today().isoformat())
+        upload_cleaned_data(mode="all")

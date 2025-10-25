@@ -101,4 +101,4 @@ if __name__ == "__main__":
         date_str = sys.argv[1]
         load_data(mode='single', date_str=date_str)
     else:
-        load_data(mode="single", date_str=date.today().isoformat())
+        load_data(mode="all")
