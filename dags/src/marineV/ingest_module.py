@@ -109,12 +109,29 @@ def save_to_json(df, chosen_date):
 
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(old_data, f, ensure_ascii=False, indent=2)
-    print(f"✅ Đã lưu {len(new_data)} bản ghi vào {filename}")
+    print(f"Đã lưu {len(new_data)} bản ghi vào {filename}")
 
 
 def run_ingest(chosen_date):
     marine_data = ingest_data(LOCATIONS, URLS["marine"]["url"], URLS["marine"]["fields"], chosen_date)
     weather_data = ingest_data(LOCATIONS, URLS["weather"]["url"], URLS["weather"]["fields"], chosen_date)
-    df = pd.DataFrame(marine_data + weather_data).fillna('N/A')
-    save_to_json(df, chosen_date)
-    print(f"📊 Tổng số bản ghi thu thập: {len(df)}")
+
+    df_marine = pd.DataFrame(marine_data)
+    df_weather = pd.DataFrame(weather_data)
+
+    df_merged = pd.merge(
+        df_marine,
+        df_weather,
+        on=['location', 'lat', 'lng', 'time'],
+        how='outer',
+        suffixes=("_marine", "_weather")
+    )
+
+    for col in df_merged.columns:
+        if col.endswith("_marine") or col.endswith("_weather"):
+            df_merged.rename(columns={col: col.replace("_marine", "").replace("_weather", "")}, inplace=True)
+
+    df_merged.fillna("N/A", inplace=True)
+
+    save_to_json(df_merged, chosen_date)
+    print(f" Tổng số bản ghi thu thập: {len(df_merged)}")

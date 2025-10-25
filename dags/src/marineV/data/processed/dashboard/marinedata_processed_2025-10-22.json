@@ -1,0 +1,58 @@
+[
+  {
+    "location": "Cù Lao Chàm (ngư trường trung bộ)",
+    "wave_height": 3.180000066757202,
+    "sea_surface_temperature": 27.799999237060547,
+    "ocean_current_velocity": 4.267176628112793,
+    "marine_safety_index": 19.6
+  },
+  {
+    "location": "Hải Phòng – Quảng Ninh (vịnh Bắc Bộ)",
+    "wave_height": 0.30000001192092896,
+    "sea_surface_temperature": 27.600000381469727,
+    "ocean_current_velocity": 0.17999999225139618,
+    "marine_safety_index": 88.8
+  },
+  {
+    "location": "Khu vực Quần đảo Hoàng Sa",
+    "wave_height": 2.9000000953674316,
+    "sea_surface_temperature": 28.25,
+    "ocean_current_velocity": 0.6489992141723633,
+    "marine_safety_index": 31.7
+  },
+  {
+    "location": "Khu vực Quần đảo Trường Sa",
+    "wave_height": 1.9600000381469727,
+    "sea_surface_temperature": 30.049999237060547,
+    "ocean_current_velocity": 0.7421590089797974,
+    "marine_safety_index": 41.0
+  },
+  {
+    "location": "Ngư trường Cà Mau – Kiên Giang",
+    "wave_height": 0.46000000834465027,
+    "sea_surface_temperature": 29.649999618530273,
+    "ocean_current_velocity": 3.3190360069274902,
+    "marine_safety_index": 59.0
+  },
+  {
+    "location": "Ven bờ Ninh Thuận – Bình Thuận",
+    "wave_height": 1.5800000429153442,
+    "sea_surface_temperature": 28.399999618530273,
+    "ocean_current_velocity": 6.27939510345459,
+    "marine_safety_index": 42.9
+  },
+  {
+    "location": "Ven bờ Quảng Ngãi – Bình Định (khoảng 30 hải lý)",
+    "wave_height": 3.1600000858306885,
+    "sea_surface_temperature": 28.149999618530273,
+    "ocean_current_velocity": 5.223103046417236,
+    "marine_safety_index": 19.7
+  },
+  {
+    "location": "Đông bắc đảo Côn Sơn (vùng Đông Nam Bộ biển Đông)",
+    "wave_height": 1.0,
+    "sea_surface_temperature": 29.649999618530273,
+    "ocean_current_velocity": 2.3469126224517822,
+    "marine_safety_index": 50.0
+  }
+]

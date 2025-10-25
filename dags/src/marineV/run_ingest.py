@@ -12,5 +12,5 @@ if date_input:
 else:
     chosen_date = datetime.now().strftime("%Y-%m-%d")
 
-print("📅 Lấy dữ liệu cho ngày:", chosen_date)
+print("Lấy dữ liệu cho ngày:", chosen_date)
 run_ingest(chosen_date)
